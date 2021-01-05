@@ -1,0 +1,13 @@
+{
+  "name": "@tuxan/bundle",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/cjs/main.js",
+  "module": "./dist/esm/main.js",
+  "bundle": "./dist/browser/main.js",
+  "dependencies": {
+    "@tuxan/m1": "1.0.0",
+    "@tuxan/m2": "1.0.0"
+  }
+}

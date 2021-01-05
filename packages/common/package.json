@@ -1,0 +1,8 @@
+{
+  "name": "@tuxan/common",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "bundle": "./dist/browser/index.js"
+}

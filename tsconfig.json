@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "@tuxan/*": [
+        "packages/*/src"
+      ]
+    },
+    "outDir": "./dist",
+    "declaration": true,
+    "removeComments": false,
+    "allowJs": false
+  },
+  "exclude": [
+    "node_modules",
+    "**/dist/**",
+    "**/lib/**",
+    "**/types/**",
+    "bundles/**/*.d.ts",
+    "rollup.config.js"
+  ],
+  "ts-node": {
+    "files": true,
+    "compilerOptions": {
+      "esModuleInterop": true
+    }
+  }
+}

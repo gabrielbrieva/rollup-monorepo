@@ -1,6 +1,6 @@
 import path from 'path';
-import typescript from '@rollup/plugin-typescript';
-import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@wessberg/rollup-plugin-ts';
+import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import json from '@rollup/plugin-json';
@@ -35,14 +35,15 @@ async function main()
 {
     const plugins = [
         //sourcemaps(),
-        /*resolve({
+        nodeResolve(/*{
             browser: true,
             preferBuiltins: false,
-        }),*/
+        }*/),
         //commonjs(),
         //json(),
         typescript({
-            //tsconfig: "tsconfig.json",
+            tsconfig: "tsconfig.json",
+            browserslist: false
         })
     ];
 
@@ -53,7 +54,7 @@ async function main()
     //const { scope, ignore } = minimist(process.argv.slice(2));
     //const packages = await getSortedPackages(scope, ignore);
     const packages = await getSortedPackages();
-    
+
     const namespaces = {};
     const pkgData = {};
 
@@ -92,7 +93,7 @@ async function main()
                     file: path.join(basePath, main),
                     format: 'cjs',
                     sourcemap,
-                }/*,
+                },
                 {
                     file: path.join(basePath, module),
                     format: 'esm',
@@ -104,7 +105,7 @@ async function main()
                     name: name,
                     sourcemap,
                     globals: namespaces
-                }*/
+                }
             ],
             external,
             plugins,
